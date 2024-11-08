@@ -1,5 +1,9 @@
+import { Navitems } from "./Navitems";
+
 const Header = () => {
-  return <div>Header</div>;
+  return <div>
+    <Navitems/>
+  </div>;
 };
 
 export default Header;
