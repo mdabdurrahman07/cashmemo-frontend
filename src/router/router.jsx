@@ -7,9 +7,10 @@ import Dashboard from "../Dashboard/Dashboard";
 import Statistics from "../pages/DashboardPages/Statistics";
 import Cashmemo from "../pages/DashboardPages/Cashmemo";
 import Shop from "../pages/DashboardPages/Shop";
-import { Profile } from "../pages/DashboardPages/Profile";
+
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Profile from "../pages/DashboardPages/Profile";
 
 const router = createBrowserRouter([
   {

@@ -1,30 +1,34 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../Provider/AuthProvider";
+
+import axios from "axios";
+import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const nevigate = useNavigate()
+  const { creatUser } = useContext(AuthContext);
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    // const name = data?.name
-    // const email = data?.email
-    // const phoneNumber = data?.phoneNumber
-    // const username = data?.username
-    // const password = data?.password
-    // const nid = data?.nid
-    // const tradeLicense = data?.tradeLicense
-    // const TIN = data?.TIN
-    // const image = data?.image
-
-console.log(data)
-    // console.log(name,
-    //   email,
-    //   phoneNumber,
-    //   username,
-    //   password,
-    //   nid,
-    //   tradeLicense,
-    //   TIN,
-    //   image)
-
-
+    creatUser(data?.email, data?.password)
+      .then((res) => {
+        console.log(res);
+        toast.success("User created successfully")
+        nevigate("/")
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+      
+      axios.post("http://localhost:5000/api/v1/users/register" , data)
+      .then(res => {
+        console.log(res.data)
+        
+      })
+      .catch(error => {
+        toast.error(error)
+      })
   };
   return (
     <div className="max-w-screen-lg mx-auto">
@@ -60,6 +64,13 @@ console.log(data)
             {...register("password")}
             className="px-5 py-2.5 border-2 border-slate-500 mb-5 w-1/2 mx-auto"
           />
+          <select
+            {...register("role")}
+            className="px-5 py-2.5 border-2 border-slate-500 mb-5 w-1/2 mx-auto"
+          >
+            <option value="supplier">Supplier</option>
+            <option value="wholesaler">Wholesaler</option>
+          </select>
           <input
             placeholder="Enter NID"
             type="number"
@@ -84,7 +95,7 @@ console.log(data)
             {...register("image")}
             className="px-5 py-2.5 border-2 border-slate-500 mb-5 w-1/2 mx-auto"
           />
-            
+
           <input
             className="px-3.5 py-2 bg-blue-500 text-white rounded-xl w-20 mx-auto"
             type="submit"
