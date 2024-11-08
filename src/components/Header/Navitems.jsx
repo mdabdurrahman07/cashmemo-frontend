@@ -67,7 +67,7 @@ export const Navitems = () => {
           {user ? (
             <button
               onClick={handlelogout}
-              className="text-xl hover:bg-red-500 hover:text-white px-2.5 py-1.5 rounded-lg"
+              className="text-xl bg-red-500 text-white px-2.5 py-1.5 rounded-lg"
             >
               Logout
             </button>

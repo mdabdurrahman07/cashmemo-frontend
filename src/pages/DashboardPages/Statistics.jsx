@@ -68,49 +68,21 @@ const DashBoard_Stats = () => {
   const tableData = [
     {
       id: 1,
-      fileName: "Landscape-Beach.png",
-      fileFormat: "Png",
-      ratio: "16:9",
-      resolution: "1920x1080",
-      fileSize: "43 KB",
-      status: "In Progress",
+      fileName: "1",
+      fileFormat: "1",
+      ratio: "16:09",
+      resolution: "Jamil",
+     
     },
     {
       id: 2,
-      fileName: "Portrait-Sunset.jpg",
-      fileFormat: "Jpg",
-      ratio: "4:3",
-      resolution: "1024x768",
-      fileSize: "128 KB",
-      status: "Complete",
+      fileName: "2",
+      fileFormat: "1",
+      ratio: "16:05",
+      resolution: "Admin",
+     
     },
-    {
-      id: 3,
-      fileName: "Cityscape-Night.png",
-      fileFormat: "Png",
-      ratio: "16:9",
-      resolution: "3840x2160",
-      fileSize: "210 KB",
-      status: "Pending",
-    },
-    {
-      id: 4,
-      fileName: "Animation-Loading.gif",
-      fileFormat: "Gif",
-      ratio: "1:1",
-      resolution: "800x800",
-      fileSize: "76 KB",
-      status: "In Progress",
-    },
-    {
-      id: 5,
-      fileName: "Mountain-Peak.jpg",
-      fileFormat: "Jpg",
-      ratio: "16:9",
-      resolution: "2560x1440",
-      fileSize: "312 KB",
-      status: "Complete",
-    },
+    
   ];
   const chartData = [
     { browser: "User", visitors: 275, fill: "#0077b6" },
@@ -195,23 +167,19 @@ const DashBoard_Stats = () => {
             <TableHeader>
               <TableRow>
                 <TableHead>
-                  <div className="max-w-[250px]">File Name</div>
+                  <div className="max-w-[250px]">Serial</div>
                 </TableHead>
                 <TableHead>
-                  <div className="w-[80px]">File Format</div>
+                  <div className="w-[80px]">Invoices Created</div>
                 </TableHead>
                 <TableHead>
-                  <div className="w-[85px]">Aspect Ratio</div>
+                  <div className="w-[85px]">Created At</div>
                 </TableHead>
                 <TableHead>
-                  <div className="w-[90px]">Resolution</div>
+                  <div className="w-[90px]">UserName</div>
                 </TableHead>
-                <TableHead>
-                  <div className="w-[90px]">File Size</div>
-                </TableHead>
-                <TableHead>
-                  <div className="w-[80px]">Status</div>
-                </TableHead>
+                
+                
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -225,8 +193,8 @@ const DashBoard_Stats = () => {
                   <TableCell>{item.fileFormat}</TableCell>
                   <TableCell>{item.ratio}</TableCell>
                   <TableCell>{item.resolution}</TableCell>
-                  <TableCell>{item.fileSize}</TableCell>
-                  <TableCell>{item.status}</TableCell>
+                  
+                 
                 </TableRow>
               ))}
             </TableBody>
