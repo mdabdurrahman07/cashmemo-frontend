@@ -8,8 +8,20 @@ import {
   NavbarContainer,
   NavbarItem,
   NavbarList,
+  toast,
 } from "keep-react";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+
 export const Navitems = () => {
+  const { user, logout } = useContext(AuthContext);
+  const handlelogout = () => {
+    logout()
+      .then(() => {toast.success("Logout Successful")})
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const navitems = [
     {
       path: "/",
@@ -37,43 +49,50 @@ export const Navitems = () => {
         <NavbarList>
           {navitems.map((values) => (
             <NavLink
-            key={values?.name}
-            to={values.path}
-            className={({ isActive, isPending }) =>
-              isPending
-                ? "pending"
-                : isActive
-                ? "ml-5 text-xl rounded-lg bg-blue-500 text-white px-2.5 py-1.5"
-                : "ml-5 text-xl"
-            }
-          >
-            {values.name}
-          </NavLink>
+              key={values?.name}
+              to={values.path}
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "ml-5 text-xl rounded-lg bg-blue-500 text-white px-2.5 py-1.5"
+                  : "ml-5 text-xl"
+              }
+            >
+              {values.name}
+            </NavLink>
           ))}
         </NavbarList>
         <NavbarList>
-        <NavLink
-            
-            to="/login"
-            className={({ isActive, isPending }) =>
-              isPending
-                ? "pending"
-                : isActive
-                ? "grid mb-5 text-xl rounded-lg bg-blue-500 text-white px-2.5 py-1.5"
-                : "grid mb-5 text-xl"
-            }
-          >
-            Login
-          </NavLink>
+          {user ? (
+            <button
+              onClick={handlelogout}
+              className="text-xl hover:bg-red-500 hover:text-white px-2.5 py-1.5 rounded-lg"
+            >
+              Logout
+            </button>
+          ) : (
+            <NavLink
+              to="/login"
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "grid  text-xl rounded-lg bg-blue-500 text-white px-2.5 py-1.5"
+                  : "grid  text-xl"
+              }
+            >
+              Login
+            </NavLink>
+          )}
           <NavLink
-            
             to="/register"
             className={({ isActive, isPending }) =>
               isPending
                 ? "pending"
                 : isActive
-                ? "grid mb-5 text-xl border-2 rounded-lg px-2.5 py-1.5 border-blue-500"
-                : "grid mb-5 text-xl rounded-lg border-blue-500  px-2.5 py-1.5"
+                ? "grid  text-xl border-2 rounded-lg px-2.5 py-1.5 border-blue-500"
+                : "grid  text-xl rounded-lg border-blue-500  px-2.5 py-1.5"
             }
           >
             Register

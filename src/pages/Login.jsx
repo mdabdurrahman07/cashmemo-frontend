@@ -1,8 +1,24 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../Provider/AuthProvider";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 const Login = () => {
+  const neviagte = useNavigate()
+  const {signIn} = useContext(AuthContext)
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    signIn(data?.email , data?.password)
+    .then((res) => {
+      console.log(res)
+      toast.success("Login successful")
+      neviagte("/dashboard/cashmemo")
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  }
   return (
     <div className="max-w-screen-lg mx-auto">
       <div>
@@ -10,13 +26,13 @@ const Login = () => {
           <input
             placeholder="Enter Email"
             type="email"
-            {...register("name")}
+            {...register("email")}
             className="px-5 py-2.5 border-2 border-slate-500 mb-5  w-1/2 mx-auto"
           />
           <input
             placeholder="Enter Password"
             type="Password"
-            {...register("email")}
+            {...register("password")}
             className="px-5 py-2.5 border-2 border-slate-500 mb-5 w-1/2 mx-auto"
           />
           <input 
