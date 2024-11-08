@@ -20,7 +20,7 @@ const Login = () => {
     })
   }
   return (
-    <div className="max-w-screen-lg mx-auto">
+    <div className="max-w-screen-lg mx-auto h-screen">
       <div>
         <form onSubmit={handleSubmit(onSubmit)} className="grid">
           <input
