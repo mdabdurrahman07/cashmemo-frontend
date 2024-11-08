@@ -15,7 +15,7 @@ const Profile = () => {
 
   return (
     <div className="px-5">
-      <h1 className="text-3xl font-medium font-serif underline  my-5 text-center">
+      <h1 className="text-3xl font-medium font-serif   my-5 text-center">
         Profile
       </h1>
       {/* profile parent div */}

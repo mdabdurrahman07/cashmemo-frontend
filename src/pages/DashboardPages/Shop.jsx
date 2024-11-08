@@ -64,7 +64,7 @@ const Shop = () => {
   ];
   return (
     <div>
-      <h1 className="text-3xl font-medium font-serif underline  my-5 text-center">
+      <h1 className="text-3xl font-medium font-serif   my-5 text-center">
         Shop
       </h1>
       <div className="p-5">

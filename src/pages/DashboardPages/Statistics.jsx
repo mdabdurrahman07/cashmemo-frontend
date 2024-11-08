@@ -137,7 +137,7 @@ const DashBoard_Stats = () => {
 
   return (
     <div className="px-5">
-      <h1 className="text-3xl font-medium font-serif underline  my-5 text-center">Statistics</h1>
+      <h1 className="text-3xl font-medium font-serif   my-5 text-center">Statistics</h1>
       {/* mini cards */}
       <div className="flex justify-around items-center gap-5">
         <div className="bg-[#0077b6] p-5 rounded-xl">
