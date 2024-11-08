@@ -1,18 +1,17 @@
+import { Modal, ModalAction, ModalContent, ModalHeader } from "keep-react";
 import { useForm } from "react-hook-form";
 import { BsPinMap } from "react-icons/bs";
-import { CiMail, CiPhone } from "react-icons/ci";
-import { CiShop } from "react-icons/ci";
-import { LuScanFace } from "react-icons/lu";
-import { TbLicense } from "react-icons/tb";
-import { RiUser6Line } from "react-icons/ri";
-import { CiSettings } from "react-icons/ci";
+import { CiMail, CiPhone, CiSettings, CiShop } from "react-icons/ci";
 import { IoDocument } from "react-icons/io5";
-import { Modal, ModalAction, ModalContent, ModalHeader } from "keep-react";
+import { LuScanFace } from "react-icons/lu";
+import { RiUser6Line } from "react-icons/ri";
+import { TbLicense } from "react-icons/tb";
 
 const Profile = () => {
   const { register, handleSubmit } = useForm();
-
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   return (
     <div className="px-5">
@@ -52,7 +51,7 @@ const Profile = () => {
           <h1 className="text-2xl text-center font-medium underline my-3">
             User Info
           </h1>
-          <div >
+          <div>
             <div className="space-y-4">
               <div className="flex gap-3 justify-start items-center">
                 <span>
@@ -105,7 +104,7 @@ const Profile = () => {
                   </button>
                 </div>
               </ModalAction>
-              <ModalContent className="max-w-[20rem] lg:max-w-[26rem]">
+              <ModalContent lassName="max-w-[20rem] lg:max-w-[26rem]">
                 <ModalHeader className="mb-6 flex flex-col items-center justify-center space-y-3">
                   <div>
                     <h1>Update Info</h1>
