@@ -1,5 +1,9 @@
+import Info from "../components/InfoCashmemo";
+
 const Home = () => {
-  return <div>Home</div>;
+  return <div>
+    <Info/>
+  </div>;
 };
 
 export default Home;

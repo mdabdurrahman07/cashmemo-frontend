@@ -18,49 +18,13 @@ const Shop = () => {
   const tableData = [
     {
       id: 1,
-      fileName: "Landscape-Beach.png",
-      fileFormat: "Png",
-      ratio: "16:9",
-      resolution: "1920x1080",
-      fileSize: "43 KB",
-      status: "In Progress",
+      fileName: "Rice",
+      fileFormat: "20KG",
+      ratio: "001",
+      resolution: "123278732489",
+    
     },
-    {
-      id: 2,
-      fileName: "Portrait-Sunset.jpg",
-      fileFormat: "Jpg",
-      ratio: "4:3",
-      resolution: "1024x768",
-      fileSize: "128 KB",
-      status: "Complete",
-    },
-    {
-      id: 3,
-      fileName: "Cityscape-Night.png",
-      fileFormat: "Png",
-      ratio: "16:9",
-      resolution: "3840x2160",
-      fileSize: "210 KB",
-      status: "Pending",
-    },
-    {
-      id: 4,
-      fileName: "Animation-Loading.gif",
-      fileFormat: "Gif",
-      ratio: "1:1",
-      resolution: "800x800",
-      fileSize: "76 KB",
-      status: "In Progress",
-    },
-    {
-      id: 5,
-      fileName: "Mountain-Peak.jpg",
-      fileFormat: "Jpg",
-      ratio: "16:9",
-      resolution: "2560x1440",
-      fileSize: "312 KB",
-      status: "Complete",
-    },
+    
   ];
   return (
     <div>
@@ -134,23 +98,18 @@ const Shop = () => {
             <TableHeader>
               <TableRow>
                 <TableHead>
-                  <div className="max-w-[250px]">File Name</div>
+                  <div className="max-w-[250px]">Product Name</div>
                 </TableHead>
                 <TableHead>
-                  <div className="w-[80px]">File Format</div>
+                  <div className="w-[80px]">Product Quantity</div>
                 </TableHead>
                 <TableHead>
-                  <div className="w-[85px]">Aspect Ratio</div>
+                  <div className="w-[85px]">Invoice Num</div>
                 </TableHead>
                 <TableHead>
-                  <div className="w-[90px]">Resolution</div>
+                  <div className="w-[90px]">User Id</div>
                 </TableHead>
-                <TableHead>
-                  <div className="w-[90px]">File Size</div>
-                </TableHead>
-                <TableHead>
-                  <div className="w-[80px]">Status</div>
-                </TableHead>
+                
               </TableRow>
             </TableHeader>
             <TableBody>
