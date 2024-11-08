@@ -8,7 +8,7 @@ const Dashboard = () => {
       <div className="border-2 p-5 bg-blue-100">
         <DashboardNavItems />
       </div>
-      <div className="col-span-4 border-2 border-red-500">
+      <div className="col-span-4">
         <Outlet/>
       </div>
     </div>
