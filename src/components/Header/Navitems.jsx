@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/cashmemo.png";
+// import logo from "../../assets/logo.png"
 import {
   Navbar,
   NavbarBrand,
@@ -20,7 +20,7 @@ export const Navitems = () => {
             name:"About"
         },
         {
-            path:"/dashboard",
+            path:"/dashboard/statistics",
             name:"Dashboard"
         },
         {
@@ -31,7 +31,7 @@ export const Navitems = () => {
   return (
     <Navbar>
       <NavbarContainer>
-        <NavbarBrand>{/* <img src={logo} alt="cashmemologo"/> */}</NavbarBrand>
+        <NavbarBrand><h1 className="text-xl">Cashmemo</h1></NavbarBrand>
         <NavbarList>
           
           {navitems.map(values => <NavLink key={values?.name}
