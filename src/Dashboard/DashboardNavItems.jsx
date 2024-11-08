@@ -19,7 +19,6 @@ const DashboardNavItems = () => {
       path: "/dashboard/shop",
       name: "Shop",
     },
-     
   ];
   return (
     <div>
@@ -28,7 +27,11 @@ const DashboardNavItems = () => {
           key={values?.name}
           to={values.path}
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "grid mb-5 text-xl rounded-lg bg-blue-500 text-white px-2.5 py-1.5" : "grid mb-5 text-xl"
+            isPending
+              ? "pending"
+              : isActive
+              ? "grid mb-5 text-xl rounded-lg bg-blue-500 text-white px-2.5 py-1.5"
+              : "grid mb-5 text-xl"
           }
         >
           {values.name}

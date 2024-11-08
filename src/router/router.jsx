@@ -8,6 +8,8 @@ import Statistics from "../pages/DashboardPages/Statistics";
 import Cashmemo from "../pages/DashboardPages/Cashmemo";
 import Shop from "../pages/DashboardPages/Shop";
 import { Profile } from "../pages/DashboardPages/Profile";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,15 @@ const router = createBrowserRouter([
         path: "/pricing",
         element: <Pricing />,
       },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+
     ],
   },
   {
