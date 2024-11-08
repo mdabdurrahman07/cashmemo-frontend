@@ -1,6 +1,7 @@
 const Statistics = () => {
+  console.log("this is statistic page")
   return (
-    <div>Statistics</div>
+    <div className="text-black text-2xl">Statistics</div>
   )
 }
 

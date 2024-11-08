@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { NavLink } from "react-router-dom";
 
 const DashboardNavItems = () => {
@@ -21,16 +21,20 @@ const DashboardNavItems = () => {
     },
   ];
   return (
-    <div className="space-y-5">
+    <div>
       {navitems.map((values) => (
         <NavLink
           key={values?.name}
           to={values.path}
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active" : ""
+            isPending
+              ? "pending"
+              : isActive
+              ? "grid mb-5 text-xl rounded-lg bg-blue-500 text-white px-2.5 py-1.5"
+              : "grid mb-5 text-xl"
           }
         >
-          <p className="text-xl ml-5">{values.name}</p>
+          {values.name}
         </NavLink>
       ))}
     </div>

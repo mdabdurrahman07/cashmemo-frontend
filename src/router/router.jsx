@@ -7,6 +7,9 @@ import Dashboard from "../Dashboard/Dashboard";
 import Statistics from "../pages/DashboardPages/Statistics";
 import Cashmemo from "../pages/DashboardPages/Cashmemo";
 import Shop from "../pages/DashboardPages/Shop";
+import { Profile } from "../pages/DashboardPages/Profile";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -25,24 +28,37 @@ const router = createBrowserRouter([
         path: "/pricing",
         element: <Pricing />,
       },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+
     ],
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: <Dashboard/>,
     children: [
       {
-        path:"dashboard/statistics",
-        element: <Statistics/>
+        path:"/dashboard/statistics",
+        element: <Statistics></Statistics>
       },
       {
-        path:"dashboard/cashmemo",
-        element: <Cashmemo/>
+        path:"/dashboard/cashmemo",
+        element: <Cashmemo></Cashmemo>
       },
       {
-        path:"dashboard/shop",
-        element: <Shop/>
-      }
+        path:"/dashboard/shop",
+        element: <Shop></Shop>
+      },
+      {
+        path: "/dashboard/Profile",
+        element: <Profile></Profile>,
+      },
       
     ]
   },
